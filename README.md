@@ -2,6 +2,10 @@
 
 Deliverable details can be found in the AndroidDeveloperAssignment.pdf at the root of the project
 
+Project taken about 3 hours so far (2025-01-29) due to multitasking.
+
+There is also NO usage of Gemini or other AI assisted tools - they slow me down...
+
 # Notes
 
 Ordinarily, the project would be split into multiple modules, each of which performs a specific task
@@ -16,6 +20,7 @@ Ordinarily, the project would be split into multiple modules, each of which perf
 In all the above cases, we strive for composition over inheritance. This is **normally** achieved by creating interfaces for each layer and using (say) Hilt to inject (ideally at the constructor)
 
 This approach ensures that almost *every* line of code (except UI) can have a Junit test
+
 
 ## Unit Tests
 
@@ -41,7 +46,8 @@ In the absence of a project board, the following is the list of tasks that need 
 	- KotlinXSerialization (Serialization) - GSON is likely expected. Kx is both faster and now the standard
 	- Note: Based off of another project I was working on - will need to be cleaned
 - [X] Implement the API Provider - ie, get the data and deserialize it to a DTO
-- [ ] Create the Entity / Domain model
+- [X] Create the Entity / Domain model
+- [X] Created a Repo layer to manage accessing the data
 - [ ] Create the View Model to expose the List Data
 - [ ] Implement the Home Screen (Old school Recycler/View Adapter)
 - [ ] Implement the Details screen using Compose

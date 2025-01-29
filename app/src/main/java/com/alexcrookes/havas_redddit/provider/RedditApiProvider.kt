@@ -9,5 +9,5 @@ import com.alexcrookes.havas_redddit.provider.redditapi.response.RedditFeedRespo
  * In this example case, there is effectively only a single API call
  */
 interface RedditApiProvider {
-	suspend fun getHomePage(): Result<RedditFeedResponse>
+	suspend fun getHomePage(): Result<RedditFeedDto>
 }
