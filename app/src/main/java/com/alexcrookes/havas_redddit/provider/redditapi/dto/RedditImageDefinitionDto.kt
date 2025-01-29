@@ -4,10 +4,13 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RedditFeedItemDto(
-	@SerialName("kind")
-	val kind: String,
+data class RedditImageDefinitionDto(
+	@SerialName("url")
+	val url: String,
 
-	@SerialName("data")
-	val data: RedditFeedItemDataDto,
+	@SerialName("height")
+	val height: Int,
+
+	@SerialName("width")
+	val width: Int,
 )
