@@ -24,7 +24,7 @@ Most of the time I would add Unit Tests to build confidence. As this is an Minim
 
 ## Project Structure
 
-As covered above, this would *normally* include multiple modules, which means more top level folders. This normally make it easier to move the modules to their own repos later on if needed.
+As covered above, this would *normally* include multiple modules, which means more top level folders. This normally make it easier to move the modules to their own repos later on if needed. To identify the layers, folders will be used.
 
 However we don't have that. What we do have, however is another folder called **Bruno** - This is an open source version of Postman and used to explore/test the API at low effort. In practice, this means you can test the API methods and copy the output to files, which can then be used as the source of Unit tests. While there is only a single API call, it's still good practice to include the Bruno folder as a function of testing.
 
@@ -40,7 +40,7 @@ In the absence of a project board, the following is the list of tasks that need 
 	- Glide Compose (Image Handling)
 	- KotlinXSerialization (Serialization) - GSON is likely expected. Kx is both faster and now the standard
 	- Note: Based off of another project I was working on - will need to be cleaned
-- [ ] Implement the API Provider - ie, get the data and deserialize it to a DTO
+- [X] Implement the API Provider - ie, get the data and deserialize it to a DTO
 - [ ] Create the Entity / Domain model
 - [ ] Create the View Model to expose the List Data
 - [ ] Implement the Home Screen (Old school Recycler/View Adapter)
