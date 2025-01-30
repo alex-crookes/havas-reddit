@@ -48,7 +48,7 @@ In the absence of a project board, the following is the list of tasks that need 
 - [X] Implement the API Provider - ie, get the data and deserialize it to a DTO
 - [X] Create the Entity / Domain model
 - [X] Created a Repo layer to manage accessing the data
-- [ ] Create the View Model to expose the List Data
+- [X] Create the View Model to expose the List Data
 - [ ] Implement the Home Screen (Old school Recycler/View Adapter)
 - [ ] Implement the Details screen using Compose
 - [ ] Check and clean Dependencies

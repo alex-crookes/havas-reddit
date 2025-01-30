@@ -7,8 +7,11 @@ import com.alexcrookes.havas_redddit.entities.asDetailItem
 import com.alexcrookes.havas_redddit.entities.asFeedItem
 import com.alexcrookes.havas_redddit.provider.RedditApiProvider
 import com.alexcrookes.havas_redddit.provider.redditapi.dto.RedditFeedItemDataDto
+import javax.inject.Inject
 
-class RedditRepositoryImplementation(private val api: RedditApiProvider): RedditRepository {
+class RedditRepositoryImplementation @Inject constructor(
+	private val api: RedditApiProvider
+): RedditRepository {
 
 	// region Properties
 
@@ -25,7 +28,6 @@ class RedditRepositoryImplementation(private val api: RedditApiProvider): Reddit
 	// region IMPLEMENTATION (RedditRepository)
 
 	override suspend fun getHomePage(): Result<List<FeedItem>> {
-		Log.e("VM-REPO", "Debug = $debugString")
 		require (loadRequired) {
 			return Result.success(feedItemList)
 		}
@@ -36,7 +38,6 @@ class RedditRepositoryImplementation(private val api: RedditApiProvider): Reddit
 
 		feedItems = result.feedItems.associate { it.data.itemName to it.data }
 		lastLoad = System.currentTimeMillis()
-		Log.e("VM-REPO", "Debug = $debugString")
 		return Result.success(feedItemList)
 	}
 
@@ -50,12 +51,4 @@ class RedditRepositoryImplementation(private val api: RedditApiProvider): Reddit
 
 	// endregion
 
-	private val debugString: String
-		get() {
-			return "\tcurrent Time = ${System.currentTimeMillis()}\n" +
-					"\tlastLoad = $lastLoad, delay is $maxAge\n" +
-					"\tFeed Size: ${feedItems.size}\n\n" +
-					"Ergo: loadRequired = $loadRequired"
-
-		}
 }

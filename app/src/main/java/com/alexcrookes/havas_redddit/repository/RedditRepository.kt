@@ -7,4 +7,6 @@ interface RedditRepository {
 	suspend fun getStoryDetails(id: String): Result<DetailItem>
 
 	suspend fun getHomePage(): Result<List<FeedItem>>
+
+//	suspend fun onIntentReceived(intent: HomePageIntent)
 }
