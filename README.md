@@ -49,8 +49,8 @@ In the absence of a project board, the following is the list of tasks that need 
 - [X] Create the Entity / Domain model
 - [X] Created a Repo layer to manage accessing the data
 - [X] Create the View Model to expose the List Data
-- [ ] Implement the Home Screen (Old school Recycler/View Adapter)
-- [ ] Implement the Details screen using Compose
+- [ ] Implement the Home Screen (Old school Recycler/View Adapter) will likely be injected into a Compose function
+- [X] Implement the Details screen using Compose
 - [ ] Check and clean Dependencies
 
 

@@ -7,17 +7,21 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.alexcrookes.havas_redddit.entities.FeedItem
+import com.alexcrookes.havas_redddit.ui.compose.DetailItemView
 import com.alexcrookes.havas_redddit.ui.theme.HavasreddditTheme
 import com.alexcrookes.havas_redddit.ui.viewmodel.HomePageIntent
 import com.alexcrookes.havas_redddit.ui.viewmodel.HomePageViewModel
@@ -33,6 +37,8 @@ class HavasApp: Application()
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 	private val homePageVM: HomePageViewModel by viewModels()
+
+
 
 	private val stories = mutableListOf<FeedItem>()
 
@@ -79,29 +85,13 @@ class MainActivity : ComponentActivity() {
 		enableEdgeToEdge()
 		setContent {
 			HavasreddditTheme {
-				Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-					Greeting(
-						name = "Android",
-						modifier = Modifier.padding(innerPadding)
-					)
+				Scaffold(modifier = Modifier.fillMaxSize().padding(16.dp)) { innerPadding ->
+					Column (modifier = Modifier.padding(horizontal = 16.dp)) {
+
+						DetailItemView(onClose = { Log.e("VM", "Closing") })
+					}
 				}
 			}
 		}
-	}
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-	Text(
-		text = "Hello $name!",
-		modifier = modifier
-	)
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-	HavasreddditTheme {
-		Greeting("Android")
 	}
 }

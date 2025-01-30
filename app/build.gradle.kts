@@ -61,6 +61,11 @@ dependencies {
 	implementation(libs.ktor.client.android)
 	implementation(libs.ktor.client.json)
 	implementation(libs.ktor.client.negotiation)
+	implementation(libs.glide.compose)
+
+	// Legacy
+	implementation (libs.androidx.recyclerview)
+	implementation (libs.glide)
 
 	// Test
 	testImplementation(libs.junit)
