@@ -1,6 +1,6 @@
 package com.alexcrookes.havas_redddit.repository
 
-import com.alexcrookes.havas_redddit.provider.RedditApiProvider
+import com.alexcrookes.havas_redddit.provider.redditapi.RedditApiProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

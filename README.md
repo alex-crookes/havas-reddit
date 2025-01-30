@@ -2,11 +2,31 @@
 
 Deliverable details can be found in the AndroidDeveloperAssignment.pdf at the root of the project
 
-Project taken about 3 hours so far (2025-01-29) due to multitasking.
 
-There is also NO usage of Gemini or other AI assisted tools - they slow me down...
 
-# Notes
+# Deliverable Notes
+
+This is not a complete project - There are notes on the Pseudo-Kanban below that outline where things are either skipped or should be improved.
+
+The app only has a single API call - To get the 25 items on the Home Page feed. It uses the **MVI** pattern to manage data in the correct way. This is handled in the RedditApi method. Unit testing is present to ensure the API Model correctly maps to the models we need for the UI.
+
+The next layer is the RedditRepository. This mostly follows the StaleWhileRevalidate (SWR) pattern. In short, the last loaded data are cached and only reloaded *if* the data is older than 60seconds (note: this is actually too fast for reddit itself). It could be turned into a true SWR implementation if session caching were implemented (note: this would also be trivial by implementing the FileIO method(s))
+
+Next then is the ViewModel  - This plays the role of the Domain as there's no real business logic here. It expresses the HomePage view via the HomePageViewState and updates it by sending HomePageIntents. 
+
+Finally, UI is rendered in functional components. The requirement to handle a RecyclerView is managed by wrapping it into a Compose component which uses XML Layouts and ViewBinding internally. The ViewHolder is also created in XML and ViewBinding, however, it also then contains the "MetaBar" as a compose component. This demonstrates the power of XML/Compose interop. The UI is also intended to more closely match the "new" Reddit homepage, which means it does not look like the Image. However, this would be a minor refactoring, which is also limited to the items in the UI folder
+
+As mentioned above, I've deliberately skipped steps and these are added to the PseudoKanban as "WONTFIX" items purely for interest.
+
+Project taken about 5 total hours so far, mainly I have spent the past two days multi-tasking in one hour chunks.
+
+I also want to stress there is also NO usage of Gemini or other AI assisted tools - I find their autocompletes distracting and they slow me down. I also am not a huge fan of the code they create. 
+
+Any questions, please let me know
+
+
+# Preparatory Notes
+
 
 Ordinarily, the project would be split into multiple modules, each of which performs a specific task
 
@@ -35,6 +55,7 @@ However we don't have that. What we do have, however is another folder called **
 
 The architecture will essentially be MVVM/MVI
 
+
 # Pseudo-Kanban
 
 In the absence of a project board, the following is the list of tasks that need to be completed as a pseudo-Kanban
@@ -51,7 +72,7 @@ In the absence of a project board, the following is the list of tasks that need 
 - [X] Create the View Model to expose the List Data
 - [X] Implement the Home Screen (Old school Recycler/View Adapter) will likely be injected into a Compose function
 - [X] Implement the Details screen using Compose
-- [ ] Check and clean Dependencies
+- [X] Check and clean Dependencies
 - [X] Add Back button support
 
 
@@ -60,5 +81,18 @@ BUGS
 - [X] Reddit Images not loading
 	Ughhh... They use some encoding - [this](https://old.reddit.com/r/redditdev/comments/9ncg2r/deleted_by_user/) fixes it 
 - [X] Image in Cards is small (am using the smallest thumbnail)
+
+WONTFIX
+- [ ] There are @TODO Notes in the code...
+- [ ] Glide Module Annotation not found (would be fixed by using Compose only)
+- [ ] Fix layouts to be a little more "standard"
+- [ ] Implement a *proper* theme - While there is a Material theme, it's only really used in Compose - Would need a little more time to research Compose theming in XML to proceed
+- [ ] Placeholders for image loading
+- [ ] Add other decorators, such as DATE
+- [ ] Add other data from API
+- [ ] FileIO is only really used for Testing - Could move to testing, but this is useful for caching so leaving here.
+- [ ] Would add more tests, especially value based inspections (i.e. ensure values are correctly being set)
+- [ ] Add a TopBar with Back button via the Scaffold
+- [ ] Implement Navigation library - Would make the UI code even less coupled
 
 

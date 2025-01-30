@@ -4,7 +4,7 @@ import com.alexcrookes.havas_redddit.entities.DetailItem
 import com.alexcrookes.havas_redddit.entities.FeedItem
 import com.alexcrookes.havas_redddit.entities.asDetailItem
 import com.alexcrookes.havas_redddit.entities.asFeedItem
-import com.alexcrookes.havas_redddit.provider.RedditApiProvider
+import com.alexcrookes.havas_redddit.provider.redditapi.RedditApiProvider
 import com.alexcrookes.havas_redddit.provider.redditapi.dto.RedditFeedItemDataDto
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.alexcrookes.havas_redddit.provider.redditapi
+package com.alexcrookes.havas_redddit.provider.fileIO
 
 import dagger.Module
 import dagger.Provides
@@ -7,8 +7,7 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-class RedditApiProviderModule {
-
+class FileIOModule {
 	@Provides
-	fun provideRedditApi(): RedditApiProvider = RedditApiProviderImplementation()
+	fun provideFileIO(): FileIO = FileIOImplementation()
 }

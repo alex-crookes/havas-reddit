@@ -1,8 +1,6 @@
 package com.alexcrookes.havas_redddit.provider.redditapi
 
-import com.alexcrookes.havas_redddit.provider.RedditApiProvider
 import com.alexcrookes.havas_redddit.provider.redditapi.dto.RedditFeedDto
-import junit.framework.AssertionFailedError
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
 import org.junit.Before

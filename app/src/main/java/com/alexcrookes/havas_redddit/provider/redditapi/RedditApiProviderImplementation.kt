@@ -1,6 +1,5 @@
 package com.alexcrookes.havas_redddit.provider.redditapi
 
-import com.alexcrookes.havas_redddit.provider.RedditApiProvider
 import com.alexcrookes.havas_redddit.provider.redditapi.dto.RedditFeedDto
 import com.alexcrookes.havas_redddit.provider.redditapi.response.RedditFeedResponse
 import com.alexcrookes.havas_redddit.provider.redditapi.response.asFeedDto

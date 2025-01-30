@@ -17,10 +17,6 @@ class FileIOImplementation: FileIO {
 		return safeJson.decodeFromString(deserializer, fileContents)
 	}
 
-	// endregion
-
-
-	// region Helpers
 	private fun getFile(filename: String): String? {
 		javaClass.getResourceAsStream(filename)?.let { stream ->
 			val stringValue = stream.bufferedReader().use { it.readText() }

@@ -1,7 +1,6 @@
-package com.alexcrookes.havas_redddit.provider
+package com.alexcrookes.havas_redddit.provider.redditapi
 
 import com.alexcrookes.havas_redddit.provider.redditapi.dto.RedditFeedDto
-import com.alexcrookes.havas_redddit.provider.redditapi.response.RedditFeedResponse
 
 /**
  * Performs all requested operations with the Reddit Api
