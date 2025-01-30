@@ -41,12 +41,14 @@ android {
 	}
 	buildFeatures {
 		compose = true
+		viewBinding = true
 	}
 }
 
 dependencies {
 	implementation(libs.hilt)
 	implementation(libs.hilt.navigation.compose)
+	implementation(libs.androidx.ui.viewbinding)
 	ksp(libs.hilt.compiler)
 	implementation(libs.kotlin.serialization.json)
 	implementation(libs.androidx.core.ktx)
@@ -62,6 +64,7 @@ dependencies {
 	implementation(libs.ktor.client.json)
 	implementation(libs.ktor.client.negotiation)
 	implementation(libs.glide.compose)
+	implementation (libs.androidx.cardview)
 
 	// Legacy
 	implementation (libs.androidx.recyclerview)

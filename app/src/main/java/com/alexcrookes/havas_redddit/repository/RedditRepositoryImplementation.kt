@@ -1,6 +1,5 @@
 package com.alexcrookes.havas_redddit.repository
 
-import android.util.Log
 import com.alexcrookes.havas_redddit.entities.DetailItem
 import com.alexcrookes.havas_redddit.entities.FeedItem
 import com.alexcrookes.havas_redddit.entities.asDetailItem

@@ -22,7 +22,7 @@ val RedditFeedItemDataDto.asFeedItem: FeedItem
 			title = title,
 			itemName = itemName,
 			created = created.toLong(),
-			thumbnail = preview?.images?.firstOrNull()?.resolutions?.firstOrNull()?.url,
+			thumbnail = preview?.images?.firstOrNull()?.resolutions?.lastOrNull()?.url,
 			meta = Meta(
 				upVotes = this.upVotes,
 				downVotes = this.downVotes,

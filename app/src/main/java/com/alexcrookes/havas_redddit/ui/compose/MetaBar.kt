@@ -19,7 +19,7 @@ import com.alexcrookes.havas_redddit.entities.Meta
 import com.alexcrookes.havas_redddit.ui.theme.HavasreddditTheme
 
 @Composable
-fun MetaBar(meta: Meta, modifier: Modifier) {
+fun MetaBar(meta: Meta, modifier: Modifier = Modifier) {
 	HavasreddditTheme {
 		Row(modifier = modifier) {
 			AssistChip(

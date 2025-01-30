@@ -17,7 +17,7 @@ import io.ktor.serialization.kotlinx.json.json
 class RedditApiProviderImplementation: RedditApiProvider {
 
 	// region PROPERTIES
-	private val homePage = "https://www.reddit.com/.json"
+	private val homePage = "https://www.reddit.com/.json?raw_json=1"
 
 	// @TODO - API construction does need to be reactive to Auth changes. While this is not it,
 	//    the use of a var in this manner will help refactor later on
